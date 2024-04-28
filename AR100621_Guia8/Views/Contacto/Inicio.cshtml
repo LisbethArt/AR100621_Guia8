@@ -1,0 +1,60 @@
+﻿@model List<AR100621_Guia8.Models.Contacto>
+
+@{
+    ViewBag.Title = "Inicio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Inicio</h2>
+
+<div class="row" style="margin-top:30px">
+    <div class="col-sm-12">
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h4>Lista de Contacto</h4>
+            </div>
+                <div class="panel-body">
+                <a class="btn btn-success" href="@Url.Action("Registrar","Contacto")">Crear Nuevo</a>
+                <hr />
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Nombres
+                                </th>
+                                <th>
+                                    Apellidos
+                                </th>
+                                <th>
+                                    Teléfono
+                                </th>
+                                <th>
+                                    Correo
+                                </th>
+                                <th 
+                                    style="width:150px">
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (AR100621_Guia8.Models.Contacto item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Nombres</td>
+                                    <td>@item.Apellidos</td>
+                                    <td>@item.Telefono</td>
+                                    <td>@item.Correo</td>
+                                    <td>
+                                        <a class="btn btn-primary btn-sm" href="@Url.Action("Editar", "Contacto", new { idcontacto=item.idContacto })">Editar</a>
+                                        <a class="btn btn-danger btn-sm" href="@Url.Action("Eliminar", "Contacto", new { idcontacto=item.idContacto })">Eliminar</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

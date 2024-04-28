@@ -1,0 +1,38 @@
+﻿@model AR100621_Guia8.Models.Contacto
+
+@{
+    ViewBag.Title = "Registrar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Registrar</h2>
+
+<div class="row" style="margin-top:30px">
+    <div class="col-sm-12">
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h4>Nuevo Contacto</h4>
+            </div>
+            <form action="@Url.Action("Registrar","Contacto")" method="post">
+                <div class="form-group">
+                    <label>Nombres</label>
+                    <input type="text" class="form-control" name="Nombres" />
+                </div>
+                <div class="form-group">
+                    <label>Apellidos</label>
+                    <input type="text" class="form-control" name="Apellidos" />
+                </div>
+                <div class="form-group">
+                    <label>Teléfono</label>
+                    <input type="text" class="form-control" name="Telefono" />
+                </div>
+                <div class="form-group">
+                    <label>Correo</label>
+                    <input type="text" class="form-control" name="Correo" />
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a class="btn btn-warning" href="@Url.Action("Inicio","Contacto")">Volver</a>
+            </form>
+        </div>
+    </div>
+</div>

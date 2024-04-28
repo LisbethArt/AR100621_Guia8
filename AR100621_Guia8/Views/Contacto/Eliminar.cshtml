@@ -1,0 +1,27 @@
+﻿@model AR100621_Guia8.Models.Contacto
+
+@{
+    ViewBag.Title = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="margin-top:30px">
+    <div class="col-sm-12">
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h4>Eliminar Contacto</h4>
+            </div>
+            <div class="panel-body">
+                <div class="alert alert-danger">
+                    ¿Desea eliminar el contacto: @Html.DisplayTextFor(m => m.Nombres) @Html.DisplayTextFor(m => m.Apellidos)?
+                </div>
+
+                <form action="@Url.Action("Eliminar", "Contacto")" method="post">
+                    <input type="hidden" class="form-control" name="IdContacto" value="@Html.DisplayTextFor(m=>m.idContacto)" />
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                    <a class="btn btn-warning" href="@Url.Action("Inicio","Contacto")">Volver</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
